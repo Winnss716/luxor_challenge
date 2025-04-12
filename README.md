@@ -2,7 +2,25 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Prerequisites
+- **Node.js**: v16 or later ([nodejs.org](https://nodejs.org/))
+- **npm**: Included with Node.js
+- **Git**: For cloning the repository
+
+## Setup Instructions
+
+1. **Clone the Repository**  
+   Clone the project from the `main` branch of the `luxor_challenge` repository:
+
+   ```bash
+   git clone -b main https://github.com/your-username/luxor_challenge.git
+   cd luxor_challenge
+Replace your-username with the actual GitHub username hosting the luxor_challenge repository.
+
+2: Install Dependencies
+
+Install the required npm packages:
+run: npm install
 
 In the project directory, you can run:
 
@@ -38,9 +56,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
