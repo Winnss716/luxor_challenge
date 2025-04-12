@@ -1,0 +1,227 @@
+.collection-page {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+
+    h2 {
+        margin-bottom: 20px;
+        color: #FFFFFF;
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: #B0B0B0;
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        /* Increased for better spacing */
+        text-align: left;
+        width: 100%;
+        /* Ensure full width of parent container */
+        box-sizing: border-box;
+        /* Prevent padding issues */
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            /* Slightly more spacing */
+            font-weight: bold;
+            color: #B0B0B0;
+            font-size: 0.95rem;
+            /* Slightly smaller for hierarchy */
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            /* Full width of .form-group */
+            padding: 10px;
+            /* Increased padding for touch targets */
+            border: 1px solid #4A4A4A;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #2E2E2E;
+            color: #FFFFFF;
+            outline: none;
+            font-size: 1rem;
+            /* Consistent text size */
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #FFB300;
+                box-shadow: 0 0 5px rgba(255, 179, 0, 0.3);
+                /* Subtle glow */
+            }
+        }
+
+        select {
+            padding: 10px;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23B0B0B0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+
+        textarea {
+            min-height: 120px;
+            /* Slightly taller for usability */
+            resize: vertical;
+        }
+
+        .error {
+            color: #FF4D4F;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: block;
+        }
+    }
+
+    button[type="submit"],
+    .delete-button {
+        width: 100%;
+        padding: 12px;
+        /* Slightly thicker buttons */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+    }
+
+    button[type="submit"] {
+        background: linear-gradient(90deg, #FFB300 0%, #FFD740 50%, #FFB300 100%);
+        color: #1A1A1A;
+        margin-bottom: 10px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        &:hover {
+            background: linear-gradient(90deg, #E69500 0%, #FFD740 50%, #E69500 100%);
+        }
+
+        &:disabled {
+            background: #4A4A4A;
+            cursor: not-allowed;
+            color: #B0B0B0;
+
+            &::after {
+                animation: none;
+            }
+        }
+    }
+
+    .delete-button {
+        background: linear-gradient(90deg, #DC3545 0%, #FF4D4F 50%, #DC3545 100%);
+        color: #FFFFFF;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        &:hover {
+            background: linear-gradient(90deg, #C82333 0%, #FF4D4F 50%, #C82333 100%);
+        }
+
+        &:disabled {
+            background: #4A4A4A;
+            cursor: not-allowed;
+            color: #B0B0B0;
+
+            &::after {
+                animation: none;
+            }
+        }
+    }
+
+    .error {
+        color: #FF4D4F;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .collection-page {
+        padding: 15px;
+        max-width: 100%;
+        /* Allow full width on small screens */
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+
+        label {
+            font-size: 0.9rem;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 9px;
+            font-size: 0.95rem;
+        }
+    }
+
+    button[type="submit"],
+    .delete-button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .collection-page {
+        max-width: 450px;
+        /* Slightly wider for larger screens */
+    }
+}

@@ -1,0 +1,10 @@
+.line-chart-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1A1A1A, #2C2C2C);
+}
+
+.line-chart-container svg {
+    display: block;
+}

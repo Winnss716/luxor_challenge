@@ -1,0 +1,579 @@
+.bid-page {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+
+    h2 {
+        margin-bottom: 20px;
+        color: #FFFFFF;
+        font-size: 1.8rem;
+        /* Slightly larger for prominence */
+    }
+
+    >* {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        /* Increased for better spacing */
+        text-align: left;
+        width: 100%;
+        /* Ensure full width of parent */
+        max-width: 400px;
+        /* Constrain for readability, aligned with form context */
+        margin-left: auto;
+        /* Center within .bid-page */
+        margin-right: auto;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            /* More spacing for clarity */
+            font-weight: bold;
+            color: #B0B0B0;
+            font-size: 0.95rem;
+            /* Subtle hierarchy */
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            /* Increased for better touch targets */
+            border: 1px solid #4A4A4A;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #2E2E2E;
+            color: #FFFFFF;
+            outline: none;
+            font-size: 1rem;
+            /* Consistent and readable */
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #FFC107;
+                box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+                /* Subtle focus effect */
+            }
+        }
+
+        .error {
+            color: #FF4D4F;
+            font-size: 0.85rem;
+            /* Smaller but clear */
+            margin-top: 6px;
+            display: block;
+        }
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        max-width: 400px;
+        /* Match .form-group for alignment */
+        padding: 12px;
+        /* Slightly thicker for prominence */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        /* More spacing below */
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(90deg, #FFC107 0%, #FFCA28 50%, #FFC107 100%);
+        color: #1A1A1A;
+        font-size: 1rem;
+        /* Consistent with inputs */
+        transition: background 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        &:hover {
+            background: linear-gradient(90deg, #E0A800 0%, #FFCA28 50%, #E0A800 100%);
+        }
+
+        &:disabled {
+            background: #4A4A4A;
+            cursor: not-allowed;
+            color: #B0B0B0;
+
+            &::after {
+                animation: none;
+            }
+        }
+    }
+
+    .error {
+        color: #FF4D4F;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    .market-selector {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+
+        label {
+            color: #B0B0B0;
+            font-weight: bold;
+            font-size: 1em;
+            white-space: nowrap;
+        }
+
+        select {
+            width: 100%;
+            max-width: 200px;
+            padding: 8px 24px 8px 8px;
+            border: 1px solid #4A4A4A;
+            border-radius: 4px;
+            background-color: #2E2E2E;
+            color: #FFFFFF;
+            font-size: 1em;
+            outline: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23B0B0B0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+
+            &:focus {
+                border-color: #FFC107;
+            }
+
+            &:disabled {
+                background-color: #4A4A4A;
+                color: #B0B0B0;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .toggle-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .toggle-button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: 1px solid #4A4A4A;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(90deg, #2E2E2E 0%, #3A3A3A 50%, #2E2E2E 100%);
+            color: #FFFFFF;
+            transition: background 0.3s ease, color 0.3s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -100%;
+                width: 50%;
+                height: 200%;
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.2) 50%,
+                        rgba(255, 255, 255, 0) 100%);
+                transform: rotate(45deg);
+                animation: shine 3.5s infinite;
+            }
+
+            &.active {
+                background: linear-gradient(90deg, #FFC107 0%, #FFCA28 50%, #FFC107 100%);
+                color: #1A1A1A;
+
+                &::after {
+                    background: linear-gradient(to right,
+                            rgba(255, 255, 255, 0) 0%,
+                            rgba(255, 255, 255, 0.3) 50%,
+                            rgba(255, 255, 255, 0) 100%);
+                }
+            }
+
+            &:hover:not(:disabled) {
+                background: linear-gradient(90deg, #E0A800 0%, #FFCA28 50%, #E0A800 100%);
+                color: #1A1A1A;
+            }
+
+            &:disabled {
+                background: #4A4A4A;
+                cursor: not-allowed;
+                color: #B0B0B0;
+
+                &::after {
+                    animation: none;
+                }
+            }
+        }
+    }
+
+    .bid-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .collection-group {
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #1E1E1E;
+            width: 100%;
+            /* Changed from 900px to scale with parent */
+            max-width: 900px;
+            /* Maintain consistency with other elements */
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+
+        .collection-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #FFC107;
+            border: 1px solid #4A4A4A;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            /* Add shiny effect styles */
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(90deg, #FFC107 0%, #FFCA28 50%, #FFC107 100%);
+            color: #1A1A1A;
+            transition: background 0.3s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -100%;
+                width: 50%;
+                height: 200%;
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.3) 50%,
+                        rgba(255, 255, 255, 0) 100%);
+                transform: rotate(45deg);
+                animation: shine 3s infinite;
+            }
+
+            &:hover {
+                background: linear-gradient(90deg, #E0A800 0%, #FFCA28 50%, #E0A800 100%);
+            }
+
+            h3 {
+                margin: 0;
+                color: #1A1A1A;
+                font-size: 1.2em;
+            }
+
+            span {
+                color: #1A1A1A;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background-color: #E0A800;
+            }
+        }
+
+        .bid-content {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: #1E1E1E;
+        }
+
+        .bid-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #1E1E1E;
+            color: #FFFFFF;
+            margin: 0;
+            border: 1px solid #4A4A4A;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+
+            th,
+            td {
+                padding: 10px;
+                text-align: center;
+                border: 1px solid #4A4A4A;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            th {
+                background-color: #2E2E2E;
+                color: #B0B0B0;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 0.9em;
+            }
+
+            th:first-child,
+            td:first-child {
+                border-left: none;
+            }
+
+            th:last-child,
+            td:last-child {
+                border-right: none;
+            }
+
+            td {
+                color: #B0B0B0;
+            }
+
+            .collection-price {
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+
+            .bid-price {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 4px;
+                white-space: nowrap;
+            }
+
+            .highlight-green {
+                color: #28A745;
+                border: 2px solid #28A745;
+            }
+
+            .highlight-red {
+                color: #DC3545;
+                border: 2px solid #DC3545;
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
+
+            .bid-actions {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                white-space: nowrap;
+            }
+        }
+
+        .bid-item {
+            border-bottom: 1px solid #4A4A4A;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            p {
+                margin: 5px 0;
+                color: #B0B0B0;
+                flex: 1 1 auto;
+            }
+        }
+
+        .action-button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        .accept-button {
+            background: linear-gradient(90deg, #28A745 0%, #34C759 50%, #28A745 100%);
+            color: #FFFFFF;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -100%;
+                width: 50%;
+                height: 200%;
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.3) 50%,
+                        rgba(255, 255, 255, 0) 100%);
+                transform: rotate(45deg);
+                animation: shine 3s infinite;
+            }
+
+            &:hover:not(:disabled) {
+                background: linear-gradient(90deg, #218838 0%, #34C759 50%, #218838 100%);
+            }
+        }
+
+        .reject-button {
+            background: linear-gradient(90deg, #DC3545 0%, #FF4D4F 50%, #DC3545 100%);
+            color: #FFFFFF;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -100%;
+                width: 50%;
+                height: 200%;
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.3) 50%,
+                        rgba(255, 255, 255, 0) 100%);
+                transform: rotate(45deg);
+                animation: shine 3s infinite;
+            }
+
+            &:hover:not(:disabled) {
+                background: linear-gradient(90deg, #C82333 0%, #FF4D4F 50%, #C82333 100%);
+            }
+        }
+
+        .cancel-button {
+            background: linear-gradient(90deg, #DC3545 0%, #FF4D4F 50%, #DC3545 100%);
+            color: #FFFFFF;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -100%;
+                width: 50%;
+                height: 200%;
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.3) 50%,
+                        rgba(255, 255, 255, 0) 100%);
+                transform: rotate(45deg);
+                animation: shine 3s infinite;
+            }
+
+            &:hover:not(:disabled) {
+                background: linear-gradient(90deg, #C82333 0%, #FF4D4F 50%, #C82333 100%);
+            }
+        }
+
+        .action-button:disabled {
+            background: #4A4A4A;
+            cursor: not-allowed;
+            color: #B0B0B0;
+
+            &::after {
+                animation: none;
+            }
+        }
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .bid-page {
+        padding: 15px;
+    }
+
+    .form-group {
+        max-width: 100%;
+        /* Full width on small screens */
+        margin-bottom: 18px;
+
+        label {
+            font-size: 0.9rem;
+        }
+
+        input,
+        select {
+            padding: 9px;
+            font-size: 0.95rem;
+        }
+    }
+
+    button[type="submit"] {
+        max-width: 100%;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .form-group {
+        max-width: 500px;
+        /* Slightly wider for mid-sized screens */
+    }
+
+    button[type="submit"] {
+        max-width: 500px;
+    }
+}
