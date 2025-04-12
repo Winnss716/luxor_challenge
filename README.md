@@ -32,5 +32,5 @@ This server provides:
 Clone the project from the `luxor_server` branch:
 
 ```bash
-git clone -b main https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone -b luxor_mobile_app https://github.com/your-username/luxor_challenge.git
+cd luxor_challenge
